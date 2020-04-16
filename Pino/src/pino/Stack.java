@@ -35,6 +35,10 @@ public class Stack {
         
         ListItem item = top;
         top = top.getNext();
+        size--;
+        if(size == 0) {
+            top = null;
+        }
         return item;
     }
     // tulosta pinon sisältö muuttamatta pinoa

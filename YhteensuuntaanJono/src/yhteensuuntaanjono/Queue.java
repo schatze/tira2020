@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jono;
+package yhteensuuntaanjono;
 
 /**
  *
@@ -11,7 +11,6 @@ package jono;
  */
 public class Queue {
     private ListItem top;
-    private ListItem tail;
     private int size;
     
     // muodosta uusi lista-alkio ja vie se pinon huipulle
@@ -19,13 +18,11 @@ public class Queue {
         if(top == null) {
             top = new ListItem();
             top.setData(aData);
-            tail = top;
             size++;
         } else {
             ListItem item = new ListItem();
             item.setData(aData);
             item.setNext(top);
-            top.setLast(item);
             top = item;
             size++;
         }
@@ -33,13 +30,22 @@ public class Queue {
     // poista ja palauta alkio jonon perältä
     // jos jono tyhjä palauta null
     public ListItem pop(){
-        if(tail == null)
+        if(top == null)
             return null;
         
-        ListItem item = tail;
-        tail = item.getLast();
+        ListItem iterator = top;
+        ListItem lastIterator = top;
+        while(iterator.getNext() != null) {
+            lastIterator = iterator;
+            iterator = iterator.getNext();
+        }
+        
+        lastIterator.setNext(null);
         size--;
-        return item;
+        if(size==0) {
+            top = null;
+        }
+        return iterator;
     }
     
     // tulosta jonon sisältö muuttamatta pinoa
