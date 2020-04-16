@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pino;
+package jono;
 
 /**
  *
  * @author Osku
  */
-public class Pino {
+public class main {
 //main alkaa-----------------------------------------------------------------------------
         public static void main(String[] args) {
 
@@ -20,7 +20,7 @@ public class Pino {
 //printMenu alkaa------------------------------------------------------------------
         private static void printMenu() {
                 char select;
-                Stack s = new Stack(); // pino-olio
+                Queue s = new Queue(); // pino-olio
                 String data; // Pinon data-kenttä
                 do {
 

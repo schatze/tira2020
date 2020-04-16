@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pino;
+package jono;
 
 /**
  *
@@ -12,7 +12,15 @@ package pino;
 public class ListItem {
     private String data;
     private ListItem next;
-    
+    private ListItem last;
+
+    public ListItem getLast() {
+        return last;
+    }
+
+    public void setLast(ListItem last) {
+        this.last = last;
+    }
 
     public ListItem() {
         next = null;
