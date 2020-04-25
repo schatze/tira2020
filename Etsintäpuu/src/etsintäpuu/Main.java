@@ -29,7 +29,8 @@ public class Main {
                         System.out.println("\t\t\t3. Käy puu läpi esijärjestyksessä.");
                         System.out.println("\t\t\t4. Lisää solmu ");
                         System.out.println("\t\t\t5. Etsi solmu ");
-                        System.out.println("\t\t\t6. lopetus ");
+                        System.out.println("\t\t\t6. Poista solmu ");
+                        System.out.println("\t\t\t7. lopetus ");
                         System.out.print("\n\n"); // tehdään tyhjiä rivejä
                         select = Lue.merkki();
                         switch (select) {
@@ -99,10 +100,24 @@ public class Main {
                             break;
                             
                         case '6':
+                            if(tree == null)
+                                break;
+                            
+                            System.out.println("Anna poistettavan solmun sisältö (desimaali)");
+                            int poistettavaValue = Lue.kluku();
+                            
+                            if(tree.deleteNodeByValue(poistettavaValue))
+                                System.out.println("Poistettu node arvolla " + poistettavaValue);
+                            else
+                                System.out.println("Nodea ei poistettu.");
+                            
+                            break;
+                            
+                        case '7':
                             break;
                         }
                 }
-                while (select != '6');
+                while (select != '7');
         }
 //printMenu loppuu ----------------------------------------------------------------
     

@@ -4,6 +4,8 @@ public class Node {
     private int data;
     private BinaryTree left;
     private BinaryTree right;
+    private BinaryTree rootTree;
+    private Node parent;
 
     public Node(int value) {
         //System.out.println("Uusi node arvolla " + value);
@@ -31,6 +33,15 @@ public class Node {
     public BinaryTree right() {
         return right;
     }
+    
+    public void setParent(Node parent) {
+        this.parent = parent;
+    }
+    
+    public Node getParent() {
+        return parent;
+    }
+    
     public void setLeft(BinaryTree tree) {
         left = tree;
     }
@@ -38,5 +49,18 @@ public class Node {
         right = tree;
     }
 
-
+    public void setRootTree(BinaryTree root) {
+        if(root == null)
+            rootTree = null;
+        else
+            rootTree = root;
+    }
+    
+    public BinaryTree getRootTree() {
+        return rootTree;
+    }
+    
+    public void setData(int data) {
+        this.data = data;
+    }
 }
