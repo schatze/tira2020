@@ -28,6 +28,12 @@ public class BinaryTree {
             root = node;
             return;
         }
+        
+        if(findNodeByValue(node.getData()) != null) {   // ei saa olla duplikaatteja
+            System.out.println("Puussa on jo avain jolla on arvo " + node.getData());
+            return;
+        }
+        
         if (root.getData() > node.getData()) {   // Vasemmalle
 
             if (root.left() != null) {
