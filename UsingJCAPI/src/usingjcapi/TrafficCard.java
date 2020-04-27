@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author kamaj
  */
-public class TrafficCard implements Comparable<TrafficCard> {
+public class TrafficCard implements Comparable<TrafficCard>{
     int mTravellerNumber;
     String mOwnerName;
     float mBalance;
@@ -26,6 +26,7 @@ public class TrafficCard implements Comparable<TrafficCard> {
     public String toString(){
         return "owner: "+mOwnerName+" number: "+mTravellerNumber+" balance: "+mBalance;
     }
+    
     
     @Override
     public int compareTo( final TrafficCard card ) {

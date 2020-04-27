@@ -45,6 +45,22 @@ public class Main {
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
+        
+        System.out.println("Järjestetään omistajan nimen mukaan:");
+        Collections.sort(cardUsers, new TrafficCardComparatorNameSort());
+        System.out.println("Järjestettynä:");
+        itr = cardUsers.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+        
+        System.out.println("Järjestetään saldon mukaan:");
+        Collections.sort(cardUsers, new TrafficCardComparatorBalanceSort());
+        System.out.println("Järjestettynä:");
+        itr = cardUsers.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
     }
     
 }
