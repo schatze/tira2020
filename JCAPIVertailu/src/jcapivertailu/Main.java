@@ -20,7 +20,7 @@ public class Main {
 
     
     public static void main(String[] args) {
-        final int LUVUT_MÄÄRÄ = 5000;
+        final int LUVUT_MÄÄRÄ = 20000;
         
         BinääriPuuTreeSet jcapiTree = new BinääriPuuTreeSet();
         BinaryTree omaTree = new BinaryTree();
